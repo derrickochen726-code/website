@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L.E.G.I.T Utility & Energy Services — Quality Assurance | Mbarara, Uganda</title>
+<meta name="description" content="L.E.G.I.T Utility & Energy Services — water, solar, security, electrical and engineering solutions in Mbarara, Uganda. Quality Assurance guaranteed.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: { blue:'#0A63D6', deep:'#063E8F', dark:'#07244D', ink:'#0B1B33', sky:'#38BDF8', cyan:'#22D3EE', mist:'#F1F7FF' },
+        sun:  { DEFAULT:'#FF8A00', amber:'#FFB020', deep:'#F26A0F' }
+      },
+      fontFamily: {
+        display: ['Archivo','sans-serif'],
+        body: ['"Plus Jakarta Sans"','sans-serif'],
+        script: ['"Playfair Display"','serif']
+      }
+    }
+  }
+}
+</script>
+
+<style>
+  :root{
+    --blue:#0A63D6; --blue-deep:#063E8F; --blue-dark:#07244D; --sky:#38BDF8;
+    --orange:#FF8A00; --amber:#FFB020; --orange-deep:#F26A0F; --ink:#0B1B33;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);overflow-x:hidden}
+  h1,h2,h3,.font-display{font-family:'Archivo',sans-serif}
+  section{scroll-margin-top:96px}
+
+  ::selection{background:var(--orange);color:#fff}
+
+  /* ---------- gradients ---------- */
+  .grad-blue{background:linear-gradient(135deg,#38BDF8 0%,#0A63D6 55%,#063E8F 100%)}
+  .grad-orange{background:linear-gradient(135deg,#FFB020 0%,#FF8A00 55%,#F26A0F 100%)}
+  .grad-navy{background:linear-gradient(160deg,#0A2C5E 0%,#07244D 60%,#051A38 100%)}
+  .txt-blue-grad{background:linear-gradient(120deg,#38BDF8,#0A63D6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .txt-orange-grad{background:linear-gradient(120deg,#FFB020,#F26A0F);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* ---------- ambient bg ---------- */
+  .dot-grid{background-image:radial-gradient(rgba(10,99,214,.16) 1.4px,transparent 1.4px);background-size:22px 22px}
+  .hero-blob-1{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(56,189,248,.35),transparent 65%);filter:blur(10px);top:-120px;left:-140px;animation:drift 14s ease-in-out infinite}
+  .hero-blob-2{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 60% 40%,rgba(255,138,0,.28),transparent 65%);filter:blur(10px);bottom:-180px;right:-160px;animation:drift 17s ease-in-out infinite reverse}
+  @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-24px) scale(1.06)}}
+
+  /* ---------- logo animation ---------- */
+  .anim-gear{transform-box:view-box;transform-origin:152px 84px;animation:spin 26s linear infinite}
+  .anim-sun{transform-box:view-box;transform-origin:152px 90px;animation:pulseSun 3.4s ease-in-out infinite}
+  .anim-drop{transform-box:view-box;animation:bob 5s ease-in-out infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes pulseSun{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+  .float-card{animation:floaty 6s ease-in-out infinite}
+  .float-card.d2{animation-delay:1.4s}
+  .float-card.d3{animation-delay:2.6s}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+  /* ---------- marquee ---------- */
+  .marquee{overflow:hidden;white-space:nowrap}
+  .marquee-track{display:inline-flex;gap:0;animation:scrollX 28s linear infinite;will-change:transform}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  @keyframes scrollX{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:.6rem;font-family:'Archivo';font-weight:800;border-radius:999px;transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;letter-spacing:.02em}
+  .btn:active{transform:scale(.97)}
+  .btn-orange{background:linear-gradient(135deg,#FFB020,#F26A0F);color:#fff;box-shadow:0 10px 26px -8px rgba(242,106,15,.6)}
+  .btn-orange:hover{transform:translateY(-3px);box-shadow:0 16px 32px -8px rgba(242,106,15,.7);filter:brightness(1.05)}
+  .btn-blue{background:linear-gradient(135deg,#38BDF8,#0A63D6);color:#fff;box-shadow:0 10px 26px -8px rgba(10,99,214,.55)}
+  .btn-blue:hover{transform:translateY(-3px);box-shadow:0 16px 32px -8px rgba(10,99,214,.65)}
+  .btn-ghost{border:2px solid rgba(10,99,214,.35);color:var(--blue);background:#fff}
+  .btn-ghost:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 12px 26px -12px rgba(10,99,214,.4)}
+
+  /* ---------- nav ---------- */
+  .nav-link{position:relative;font-weight:600;color:#33415c;transition:color .2s}
+  .nav-link::after{content:'';position:absolute;left:0;bottom:-6px;height:3px;width:0;border-radius:3px;background:linear-gradient(90deg,#FFB020,#F26A0F);transition:width .28s ease}
+  .nav-link:hover,.nav-link.active{color:var(--blue)}
+  .nav-link:hover::after,.nav-link.active::after{width:100%}
+
+  /* ---------- cards ---------- */
+  .lift{transition:transform .3s ease,box-shadow .3s ease}
+  .lift:hover{transform:translateY(-8px)}
+  .svc-tab{transition:all .25s ease;border-left:4px solid transparent}
+  .svc-tab.active{background:linear-gradient(135deg,#0A63D6,#063E8F);color:#fff;border-left-color:#FFB020;box-shadow:0 14px 30px -12px rgba(10,99,214,.55)}
+  .svc-tab:not(.active):hover{background:#EAF3FF;border-left-color:#38BDF8}
+  .check-item i{color:var(--orange)}
+
+  .step-num{background:linear-gradient(135deg,#FFB020,#F26A0F);box-shadow:0 10px 24px -8px rgba(242,106,15,.55)}
+  .process-line{background:repeating-linear-gradient(90deg,#FFB020 0 10px,transparent 10px 20px)}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.dl-1{transition-delay:.1s}.reveal.dl-2{transition-delay:.2s}.reveal.dl-3{transition-delay:.3s}.reveal.dl-4{transition-delay:.4s}
+
+  /* ---------- slider ---------- */
+  .t-track{transition:transform .55s cubic-bezier(.6,.05,.2,1)}
+  .t-dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.3);transition:all .3s}
+  .t-dot.active{width:28px;background:linear-gradient(90deg,#FFB020,#F26A0F)}
+
+  /* ---------- faq ---------- */
+  .faq-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .faq-item.open .faq-body{max-height:260px}
+  .faq-item.open .faq-icon{transform:rotate(45deg);background:linear-gradient(135deg,#FFB020,#F26A0F);color:#fff;border-color:transparent}
+  .faq-icon{transition:transform .3s ease,background .3s}
+
+  /* ---------- forms ---------- */
+  .field{width:100%;border:2px solid #dbe7f6;border-radius:14px;padding:.8rem 1rem;background:#fff;transition:border-color .2s,box-shadow .2s;font-size:.95rem}
+  .field:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(10,99,214,.12)}
+  .field.err{border-color:#ef4444;box-shadow:0 0 0 4px rgba(239,68,68,.1)}
+  .err-msg{color:#ef4444;font-size:.78rem;margin-top:.3rem;display:none}
+  .err-msg.show{display:block}
+
+  #toTop{opacity:0;pointer-events:none;transition:all .35s}
+  #toTop.show{opacity:1;pointer-events:auto}
+
+  #toast{transform:translateY(120%);transition:transform .45s cubic-bezier(.2,.9,.3,1.2)}
+  #toast.show{transform:translateY(0)}
+
+  .wiggle:hover i{animation:wig .5s ease}
+  @keyframes wig{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
+
+  #mobileMenu{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  #mobileMenu.open{max-height:480px}
+</style>
+</head>
+
+<body class="bg-white antialiased">
+
+<!-- ===================== TOP BAR ===================== -->
+<div class="grad-navy text-white/90 text-[13px] hidden md:block">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between py-2">
+    <div class="flex items-center gap-6">
+      <a href="tel:+256769548753" class="flex items-center gap-2 hover:text-sun-amber transition"><i class="fa-solid fa-phone-volume text-sun-amber"></i> 0769 548 753</a>
+      <a href="mailto:legit.utility@hotmail.com" class="flex items-center gap-2 hover:text-sun-amber transition"><i class="fa-solid fa-envelope text-sun-amber"></i> legit.utility@hotmail.com</a>
+      <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-sun-amber"></i> Kakoba, Mbarara, Uganda</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="font-script italic text-sky-300 text-sm">Quality Assurance</span>
+      <span class="w-px h-4 bg-white/25"></span>
+      <div class="flex items-center gap-3 text-base">
+        <a href="#" aria-label="Facebook" class="hover:text-sun-amber transition"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="WhatsApp" class="hover:text-sun-amber transition"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" aria-label="Twitter" class="hover:text-sun-amber transition"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between py-3">
+    <!-- logo -->
+    <a href="#home" class="flex items-center gap-3 shrink-0">
+      <svg viewBox="0 0 230 200" class="w-12 h-11 lg:w-14 lg:h-12" aria-hidden="true">
+        <defs>
+          <linearGradient id="gDropH" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5BC9FF"/><stop offset=".5" stop-color="#1E88E5"/><stop offset="1" stop-color="#0B4FB6"/></linearGradient>
+          <linearGradient id="gGearH" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC24B"/><stop offset="1" stop-color="#F26A0F"/></linearGradient>
+          <linearGradient id="gPanelH" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3FA9F5"/><stop offset="1" stop-color="#0B4FB6"/></linearGradient>
+          <linearGradient id="gSunH" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD34D"/><stop offset="1" stop-color="#FF8A00"/></linearGradient>
+        </defs>
+        <g class="anim-gear">
+          <g fill="url(#gGearH)">
+            <rect x="144" y="24" width="16" height="22" rx="5"/>
+            <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(45 152 84)"/>
+            <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(90 152 84)"/>
+            <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(135 152 84)"/>
+            <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(180 152 84)"/>
+            <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(225 152 84)"/>
+            <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(270 152 84)"/>
+            <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(315 152 84)"/>
+            <circle cx="152" cy="84" r="46"/>
+          </g>
+          <circle cx="152" cy="84" r="32" fill="#fff"/>
+        </g>
+        <g class="anim-sun">
+          <g fill="url(#gSunH)">
+            <polygon points="152,58 147,71 157,71"/>
+            <polygon points="152,58 147,71 157,71" transform="rotate(35 152 90)"/>
+            <polygon points="152,58 147,71 157,71" transform="rotate(-35 152 90)"/>
+            <polygon points="152,58 147,71 157,71" transform="rotate(70 152 90)"/>
+            <polygon points="152,58 147,71 157,71" transform="rotate(-70 152 90)"/>
+            <path d="M131 92 a21 21 0 0 1 42 0 z"/>
+          </g>
+        </g>
+        <g transform="translate(98 88) rotate(-12)">
+          <rect x="0" y="0" width="72" height="46" rx="3" fill="#fff"/>
+          <g fill="url(#gPanelH)">
+            <rect x="4" y="4" width="14" height="11"/><rect x="21" y="4" width="14" height="11"/><rect x="38" y="4" width="14" height="11"/><rect x="55" y="4" width="13" height="11"/>
+            <rect x="4" y="18" width="14" height="11"/><rect x="21" y="18" width="14" height="11"/><rect x="38" y="18" width="14" height="11"/><rect x="55" y="18" width="13" height="11"/>
+            <rect x="4" y="32" width="14" height="10"/><rect x="21" y="32" width="14" height="10"/><rect x="38" y="32" width="14" height="10"/><rect x="55" y="32" width="13" height="10"/>
+          </g>
+        </g>
+        <g class="anim-drop">
+          <path d="M78 16 C70 40 34 82 34 112 C34 140 53 158 78 158 C103 158 122 140 122 112 C122 82 86 40 78 16 Z" fill="url(#gDropH)"/>
+          <path d="M60 66 C52 84 46 98 46 112 C46 124 51 134 59 141" stroke="#BEE9FF" stroke-width="6" stroke-linecap="round" fill="none" opacity=".75"/>
+        </g>
+        <path d="M16 140 C 40 170 120 182 198 154" stroke="#1E88E5" stroke-width="11" fill="none" stroke-linecap="round"/>
+        <path d="M24 136 C 14 128 18 116 32 116" stroke="#1E88E5" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M72 172 C 122 188 178 174 208 146" stroke="url(#gGearH)" stroke-width="11" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="leading-none">
+        <span class="font-display font-black text-xl lg:text-2xl tracking-tight"><span class="text-brand-blue">L.E.G.I.T</span> <span class="text-sun">UTILITY</span></span>
+        <span class="block font-display font-bold text-[10px] lg:text-[11px] tracking-[.22em] text-sun-deep mt-0.5">&amp; ENERGY SERVICES</span>
+      </span>
+    </a>
+
+    <!-- nav -->
+    <nav class="hidden lg:flex items-center gap-8 text-[15px]">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#why-us" class="nav-link">Why Us</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#testimonials" class="nav-link">Reviews</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#contact" class="btn btn-orange px-5 py-2.5 text-sm hidden sm:inline-flex"><i class="fa-solid fa-bolt"></i> Get a Quote</a>
+      <button id="menuBtn" class="lg:hidden w-11 h-11 rounded-xl border-2 border-brand-blue/20 text-brand-blue text-xl flex items-center justify-center" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fa-solid fa-bars" id="menuIcon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="lg:hidden bg-white border-t border-slate-100">
+    <nav class="px-6 py-4 flex flex-col gap-1 text-[15px] font-semibold text-slate-700">
+      <a href="#home" class="py-2.5 border-b border-slate-100 flex justify-between items-center">Home <i class="fa-solid fa-chevron-right text-xs text-sun"></i></a>
+      <a href="#services" class="py-2.5 border-b border-slate-100 flex justify-between items-center">Services <i class="fa-solid fa-chevron-right text-xs text-sun"></i></a>
+      <a href="#why-us" class="py-2.5 border-b border-slate-100 flex justify-between items-center">Why Us <i class="fa-solid fa-chevron-right text-xs text-sun"></i></a>
+      <a href="#process" class="py-2.5 border-b border-slate-100 flex justify-between items-center">Process <i class="fa-solid fa-chevron-right text-xs text-sun"></i></a>
+      <a href="#testimonials" class="py-2.5 border-b border-slate-100 flex justify-between items-center">Reviews <i class="fa-solid fa-chevron-right text-xs text-sun"></i></a>
+      <a href="#faq" class="py-2.5 border-b border-slate-100 flex justify-between items-center">FAQ <i class="fa-solid fa-chevron-right text-xs text-sun"></i></a>
+      <a href="#contact" class="btn btn-orange justify-center mt-3 px-5 py-3"><i class="fa-solid fa-bolt"></i> Get a Free Quote</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="home" class="relative overflow-hidden bg-brand-mist">
+  <div class="hero-blob-1"></div>
+  <div class="hero-blob-2"></div>
+  <div class="absolute inset-0 dot-grid opacity-60"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center pt-14 lg:pt-20 pb-24">
+    <!-- left -->
+    <div>
+      <div class="reveal inline-flex items-center gap-2 bg-white border border-brand-blue/15 shadow-sm rounded-full pl-1.5 pr-4 py-1.5 text-sm font-semibold text-brand-deep mb-6">
+        <span class="grad-orange text-white text-[11px] font-display font-extrabold tracking-wider rounded-full px-2.5 py-1">QUALITY ASSURANCE</span>
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-sun"></i> Kakoba, Mbarara</span>
+      </div>
+
+      <h1 class="reveal dl-1 font-display font-black text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[3.9rem] tracking-tight text-brand-ink">
+        <span class="txt-blue-grad">Water.</span> <span class="txt-orange-grad">Power.</span><br>
+        Security.<br>
+        <span class="relative inline-block">Engineered right.
+          <svg class="absolute -bottom-3 left-0 w-full" viewBox="0 0 300 14" fill="none" preserveAspectRatio="none"><path d="M3 10 C 70 2 230 2 297 9" stroke="#FF8A00" stroke-width="6" stroke-linecap="round"/></svg>
+        </span>
+      </h1>
+
+      <p class="reveal dl-2 mt-7 text-lg text-slate-600 max-w-xl leading-relaxed">
+        From <strong class="text-brand-blue">boreholes &amp; rainwater systems</strong> to <strong class="text-sun-deep">hybrid solar</strong>, CCTV surveillance and full electrical works — L.E.G.I.T delivers dependable utility solutions for homes, businesses and farms across Uganda.
+      </p>
+
+      <div class="reveal dl-3 mt-8 flex flex-wrap gap-4">
+        <a href="#contact" class="btn btn-orange px-7 py-3.5 text-base"><i class="fa-solid fa-paper-plane"></i> Get a Free Quote</a>
+        <a href="#services" class="btn btn-ghost px-7 py-3.5 text-base"><i class="fa-solid fa-screwdriver-wrench"></i> Explore Services</a>
+      </div>
+
+      <div class="reveal dl-4 mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <div class="flex items-center gap-3">
+          <div class="flex -space-x-2">
+            <span class="w-9 h-9 rounded-full grad-blue ring-2 ring-white flex items-center justify-center text-white text-xs font-bold">TR</span>
+            <span class="w-9 h-9 rounded-full grad-orange ring-2 ring-white flex items-center justify-center text-white text-xs font-bold">AJ</span>
+            <span class="w-9 h-9 rounded-full bg-brand-dark ring-2 ring-white flex items-center justify-center text-white text-xs font-bold">+</span>
+          </div>
+          <div class="text-sm"><span class="font-bold text-brand-ink">280+ clients</span><br><span class="text-slate-500">trust our work</span></div>
+        </div>
+        <div class="h-9 w-px bg-slate-200 hidden sm:block"></div>
+        <div class="text-sm">
+          <span class="text-sun-amber text-base"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span><br>
+          <span class="text-slate-500"><strong class="text-brand-ink">4.9/5</strong> service rating</span>
+        </div>
+        <div class="h-9 w-px bg-slate-200 hidden sm:block"></div>
+        <div class="text-sm flex items-center gap-2 text-slate-600"><i class="fa-solid fa-headset text-brand-blue text-xl"></i> <span><strong class="text-brand-ink">24/7</strong> support line</span></div>
+      </div>
+    </div>
+
+    <!-- right emblem -->
+    <div class="reveal dl-2 relative flex justify-center lg:justify-end">
+      <div class="relative">
+        <div class="absolute inset-0 -m-8 rounded-full bg-gradient-to-br from-sky-300/40 to-sun-amber/30 blur-2xl"></div>
+        <div class="relative w-[300px] h-[270px] sm:w-[400px] sm:h-[350px] bg-white rounded-[2.5rem] shadow-2xl shadow-brand-blue/20 border border-white flex items-center justify-center p-6">
+          <svg viewBox="0 0 230 200" class="w-full h-full drop-shadow-xl" aria-hidden="true">
+            <defs>
+              <linearGradient id="gDrop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5BC9FF"/><stop offset=".5" stop-color="#1E88E5"/><stop offset="1" stop-color="#0B4FB6"/></linearGradient>
+              <linearGradient id="gGear" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFC24B"/><stop offset="1" stop-color="#F26A0F"/></linearGradient>
+              <linearGradient id="gPanel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3FA9F5"/><stop offset="1" stop-color="#0B4FB6"/></linearGradient>
+              <linearGradient id="gSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD34D"/><stop offset="1" stop-color="#FF8A00"/></linearGradient>
+            </defs>
+            <g class="anim-gear">
+              <g fill="url(#gGear)">
+                <rect x="144" y="24" width="16" height="22" rx="5"/>
+                <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(45 152 84)"/>
+                <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(90 152 84)"/>
+                <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(135 152 84)"/>
+                <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(180 152 84)"/>
+                <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(225 152 84)"/>
+                <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(270 152 84)"/>
+                <rect x="144" y="24" width="16" height="22" rx="5" transform="rotate(315 152 84)"/>
+                <circle cx="152" cy="84" r="46"/>
+              </g>
+              <circle cx="152" cy="84" r="32" fill="#fff"/>
+            </g>
+            <g class="anim-sun">
+              <g fill="url(#gSun)">
+                <polygon points="152,58 147,71 157,71"/>
+                <polygon points="152,58 147,71 157,71" transform="rotate(35 152 90)"/>
+                <polygon points="152,58 147,71 157,71" transform="rotate(-35 152 90)"/>
+                <polygon points="152,58 147,71 157,71" transform="rotate(70 152 90)"/>
+                <polygon points="152,58 147,71 157,71" transform="rotate(-70 152 90)"/>
+                <path d="M131 92 a21 21 0 0 1 42 0 z"/>
+              </g>
+            </g>
+            <g transform="translate(98 88) rotate(-12)">
+              <rect x="0" y="0" width="72" height="46" rx="3" fill="#fff"/>
+              <g fill="url(#gPanel)">
+                <rect x="4" y="4" width="14" height="11"/><rect x="21" y="4" width="14" height="11"/><rect x="38" y="4" width="14" height="11"/><rect x="55" y="4" width="13" height="11"/>
+                <rect x="4" y="18" width="14" height="11"/><rect x="21" y="18" width="14" height="11"/><rect x="38" y="18" width="14" height="11"/><rect x="55" y="18" width="13" height="11"/>
+                <rect x="4" y="32" width="14" height="10"/><rect x="21" y="32" width="14" height="10"/><rect x="38" y="32" width="14" height="10"/><rect x="55" y="32" width="13" height="10"/>
+              </g>
+            </g>
+            <g class="anim-drop">
+              <path d="M78 16 C70 40 34 82 34 112 C34 140 53 158 78 158 C103 158 122 140 122 112 C122 82 86 40 78 16 Z" fill="url(#gDrop)"/>
+              <path d="M60 66 C52 84 46 98 46 112 C46 124 51 134 59 141" stroke="#BEE9FF" stroke-width="6" stroke-linecap="round" fill="none" opacity=".75"/>
+              <ellipse cx="88" cy="138" rx="7" ry="5" fill="#BEE9FF" opacity=".5"/>
+            </g>
+            <path d="M16 140 C 40 170 120 182 198 154" stroke="#1E88E5" stroke-width="11" fill="none" stroke-linecap="round"/>
+            <path d="M24 136 C 14 128 18 116 32 116" stroke="#1E88E5" stroke-width="8" fill="none" stroke-linecap="round"/>
+            <path d="M72 172 C 122 188 178 174 208 146" stroke="url(#gGear)" stroke-width="11" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- floating chips -->
+        <div class="float-card absolute -left-6 sm:-left-14 top-6 bg-white rounded-2xl shadow-xl shadow-sun/20 border border-sun-amber/20 px-4 py-3 flex items-center gap-3">
+          <span class="w-10 h-10 rounded-xl grad-orange text-white flex items-center justify-center text-lg"><i class="fa-solid fa-solar-panel"></i></span>
+          <span class="text-sm font-bold text-brand-ink leading-tight">Hybrid Solar<br><span class="font-medium text-slate-500">Install &amp; Repair</span></span>
+        </div>
+        <div class="float-card d2 absolute -right-4 sm:-right-10 top-1/3 bg-white rounded-2xl shadow-xl shadow-brand-blue/20 border border-brand-blue/15 px-4 py-3 flex items-center gap-3">
+          <span class="w-10 h-10 rounded-xl grad-blue text-white flex items-center justify-center text-lg"><i class="fa-solid fa-droplet"></i></span>
+          <span class="text-sm font-bold text-brand-ink leading-tight">Clean Water<br><span class="font-medium text-slate-500">UV &amp; Treatment</span></span>
+        </div>
+        <div class="float-card d3 absolute left-8 -bottom-6 bg-white rounded-2xl shadow-xl shadow-slate-300 border border-slate-100 px-4 py-3 flex items-center gap-3">
+          <span class="relative w-10 h-10 rounded-xl bg-brand-dark text-white flex items-center justify-center text-lg">
+            <i class="fa-solid fa-video"></i>
+            <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-red-500 ring-2 ring-white animate-pulse"></span>
+          </span>
+          <span class="text-sm font-bold text-brand-ink leading-tight">CCTV Live<br><span class="font-medium text-slate-500">Remote viewing</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- wave -->
+  <svg class="absolute bottom-0 left-0 w-full text-sun" viewBox="0 0 1440 70" preserveAspectRatio="none" fill="currentColor" style="height:46px"><path d="M0 40 C 240 75 480 5 720 30 C 960 55 1200 15 1440 40 L1440 70 L0 70 Z"/></svg>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="grad-orange text-white py-4 marquee shadow-lg" aria-hidden="true">
+  <div class="marquee-track font-display font-extrabold uppercase tracking-wider text-sm sm:text-base">
+    <span class="flex items-center">
+      <span class="px-6 flex items-center gap-3">Well Drilling <i class="fa-solid fa-droplet text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">Hybrid Solar Systems <i class="fa-solid fa-sun text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">CCTV &amp; PTZ Cameras <i class="fa-solid fa-video text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">Rainwater Harvesting <i class="fa-solid fa-cloud-rain text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">UV Water Purification <i class="fa-solid fa-glass-water text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">Electrical Wiring <i class="fa-solid fa-bolt text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">Pump Installation <i class="fa-solid fa-gear text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">Farm Surveillance <i class="fa-solid fa-tractor text-white/70"></i></span>
+    </span>
+    <span class="flex items-center">
+      <span class="px-6 flex items-center gap-3">Well Drilling <i class="fa-solid fa-droplet text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">Hybrid Solar Systems <i class="fa-solid fa-sun text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">CCTV &amp; PTZ Cameras <i class="fa-solid fa-video text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">Rainwater Harvesting <i class="fa-solid fa-cloud-rain text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">UV Water Purification <i class="fa-solid fa-glass-water text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">Electrical Wiring <i class="fa-solid fa-bolt text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">Pump Installation <i class="fa-solid fa-gear text-white/70"></i></span>
+      <span class="px-6 flex items-center gap-3">Farm Surveillance <i class="fa-solid fa-tractor text-white/70"></i></span>
+    </span>
+  </div>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<section id="services" class="py-20 lg:py-28 bg-white relative">
+  <div class="absolute top-0 right-0 w-72 h-72 dot-grid opacity-50"></div>
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 relative">
+    <div class="reveal max-w-2xl mb-12">
+      <span class="inline-flex items-center gap-2 text-sun-deep font-display font-extrabold tracking-[.2em] text-xs uppercase mb-3"><span class="w-8 h-[3px] grad-orange rounded-full"></span> What we do</span>
+      <h2 class="font-display font-black text-4xl lg:text-5xl text-brand-ink tracking-tight">Complete Utility &amp; <span class="txt-blue-grad">Energy Solutions</span></h2>
+      <p class="mt-4 text-slate-600 text-lg">Five specialist divisions, one accountable team. Pick a service to see everything we handle — end to end.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-[340px_1fr] gap-8 items-start">
+      <!-- tabs -->
+      <div class="reveal flex lg:flex-col gap-2 overflow-x-auto pb-2 lg:pb-0" id="svcTabs" role="tablist">
+        <button class="svc-tab active shrink-0 flex items-center gap-4 px-5 py-4 rounded-2xl text-left" data-tab="water" role="tab" aria-selected="true">
+          <span class="w-11 h-11 rounded-xl grad-blue text-white flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-faucet-drip"></i></span>
+          <span><span class="font-display font-extrabold block">Water &amp; Plumbing</span><span class="text-xs opacity-70">Supply, drainage &amp; drilling</span></span>
+        </button>
+        <button class="svc-tab shrink-0 flex items-center gap-4 px-5 py-4 rounded-2xl text-left" data-tab="solar" role="tab" aria-selected="false">
+          <span class="w-11 h-11 rounded-xl grad-orange text-white flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-solar-panel"></i></span>
+          <span><span class="font-display font-extrabold block">Solar &amp; Energy</span><span class="text-xs opacity-70">Hybrid systems &amp; savings</span></span>
+        </button>
+        <button class="svc-tab shrink-0 flex items-center gap-4 px-5 py-4 rounded-2xl text-left" data-tab="security" role="tab" aria-selected="false">
+          <span class="w-11 h-11 rounded-xl bg-brand-dark text-white flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-video"></i></span>
+          <span><span class="font-display font-extrabold block">Security Systems</span><span class="text-xs opacity-70">CCTV, PTZ &amp; remote view</span></span>
+        </button>
+        <button class="svc-tab shrink-0 flex items-center gap-4 px-5 py-4 rounded-2xl text-left" data-tab="electrical" role="tab" aria-selected="false">
+          <span class="w-11 h-11 rounded-xl grad-blue text-white flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-bolt"></i></span>
+          <span><span class="font-display font-extrabold block">Electrical Services</span><span class="text-xs opacity-70">Domestic &amp; commercial</span></span>
+        </button>
+        <button class="svc-tab shrink-0 flex items-center gap-4 px-5 py-4 rounded-2xl text-left" data-tab="engineering" role="tab" aria-selected="false">
+          <span class="w-11 h-11 rounded-xl grad-orange text-white flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-gears"></i></span>
+          <span><span class="font-display font-extrabold block">Engineering Solutions</span><span class="text-xs opacity-70">Infrastructure &amp; consultancy</span></span>
+        </button>
+      </div>
+
+      <!-- panels -->
+      <div class="relative min-h-[420px]">
+        <!-- water -->
+        <div class="svc-panel reveal rounded-3xl border border-slate-100 shadow-xl shadow-brand-blue/10 overflow-hidden bg-white" data-panel="water">
+          <div class="grad-blue text-white p-7 lg:p-9 relative overflow-hidden">
+            <i class="fa-solid fa-droplet absolute -right-6 -bottom-8 text-[9rem] text-white/10 rotate-12"></i>
+            <div class="flex items-center gap-4">
+              <span class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center text-2xl"><i class="fa-solid fa-faucet-drip"></i></span>
+              <div><h3 class="font-display font-black text-2xl lg:text-3xl">Water &amp; Plumbing Services</h3><p class="text-sky-200 text-sm mt-1">Safe water in, waste water out — done properly.</p></div>
+            </div>
+          </div>
+          <div class="p-7 lg:p-9">
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3.5 text-[15px] text-slate-700">
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Domestic water supply pipework</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Rainwater harvesting &amp; guttering</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Sanitary appliance installation</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Pump installation &amp; boosting</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> UV drinking water system installation</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Water treatment systems</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Waste &amp; soil drainage systems</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Well drilling</li>
+              <li class="check-item flex items-start gap-3 sm:col-span-2"><i class="fa-solid fa-circle-check mt-1"></i> Repair &amp; maintenance of plumbing systems</li>
+            </ul>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href="#contact" class="btn btn-blue px-6 py-3 text-sm">Request This Service</a>
+              <a href="tel:+256769548753" class="btn btn-ghost px-6 py-3 text-sm"><i class="fa-solid fa-phone"></i> 0769 548 753</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- solar -->
+        <div class="svc-panel hidden rounded-3xl border border-slate-100 shadow-xl shadow-sun/10 overflow-hidden bg-white" data-panel="solar">
+          <div class="grad-orange text-white p-7 lg:p-9 relative overflow-hidden">
+            <i class="fa-solid fa-sun absolute -right-6 -bottom-8 text-[9rem] text-white/10"></i>
+            <div class="flex items-center gap-4">
+              <span class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-2xl"><i class="fa-solid fa-solar-panel"></i></span>
+              <div><h3 class="font-display font-black text-2xl lg:text-3xl">Solar &amp; Energy Services</h3><p class="text-amber-100 text-sm mt-1">Cut bills. Beat blackouts. Own your power.</p></div>
+            </div>
+          </div>
+          <div class="p-7 lg:p-9">
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3.5 text-[15px] text-slate-700">
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Hybrid solar system installation</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Custom solar power solutions</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Solar maintenance &amp; repairs</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Energy-efficient electrical solutions</li>
+            </ul>
+            <p class="mt-5 bg-amber-50 border border-amber-200 rounded-2xl p-4 text-sm text-amber-900"><i class="fa-solid fa-lightbulb text-sun mr-2"></i><strong>Pro tip:</strong> A well-sized hybrid system can power a home or shop through every load-shedding hour — we size it to your actual consumption.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#contact" class="btn btn-orange px-6 py-3 text-sm">Get a Solar Quote</a>
+              <a href="tel:+256760529790" class="btn btn-ghost px-6 py-3 text-sm"><i class="fa-solid fa-phone"></i> 0760 529 790</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- security -->
+        <div class="svc-panel hidden rounded-3xl border border-slate-100 shadow-xl shadow-slate-300 overflow-hidden bg-white" data-panel="security">
+          <div class="grad-navy text-white p-7 lg:p-9 relative overflow-hidden">
+            <i class="fa-solid fa-shield-halved absolute -right-6 -bottom-8 text-[9rem] text-white/10"></i>
+            <div class="flex items-center gap-4">
+              <span class="w-14 h-14 rounded-2xl bg-white/15 flex items-center justify-center text-2xl"><i class="fa-solid fa-video"></i></span>
+              <div><h3 class="font-display font-black text-2xl lg:text-3xl">Security Systems</h3><p class="text-sky-200 text-sm mt-1">Watch your property from anywhere on earth.</p></div>
+            </div>
+          </div>
+          <div class="p-7 lg:p-9">
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3.5 text-[15px] text-slate-700">
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> CCTV camera installation</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> PTZ camera installation</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Remote surveillance systems</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Security system maintenance</li>
+              <li class="check-item flex items-start gap-3 sm:col-span-2"><i class="fa-solid fa-circle-check mt-1"></i> Farm &amp; plantation surveillance solutions</li>
+            </ul>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href="#contact" class="btn btn-blue px-6 py-3 text-sm">Secure My Property</a>
+              <a href="tel:+256707467979" class="btn btn-ghost px-6 py-3 text-sm"><i class="fa-solid fa-phone"></i> 0707 467 979</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- electrical -->
+        <div class="svc-panel hidden rounded-3xl border border-slate-100 shadow-xl shadow-brand-blue/10 overflow-hidden bg-white" data-panel="electrical">
+          <div class="grad-blue text-white p-7 lg:p-9 relative overflow-hidden">
+            <i class="fa-solid fa-bolt absolute -right-6 -bottom-8 text-[9rem] text-white/10 -rotate-12"></i>
+            <div class="flex items-center gap-4">
+              <span class="w-14 h-14 rounded-2xl bg-white/15 flex items-center justify-center text-2xl"><i class="fa-solid fa-bolt"></i></span>
+              <div><h3 class="font-display font-black text-2xl lg:text-3xl">Electrical Services</h3><p class="text-sky-200 text-sm mt-1">Safe, certified wiring for every building type.</p></div>
+            </div>
+          </div>
+          <div class="p-7 lg:p-9">
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3.5 text-[15px] text-slate-700">
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Domestic electrical installations</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Commercial electrical works</li>
+              <li class="check-item flex items-start gap-3 sm:col-span-2"><i class="fa-solid fa-circle-check mt-1"></i> Electrical maintenance &amp; repairs</li>
+            </ul>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href="#contact" class="btn btn-blue px-6 py-3 text-sm">Book an Electrician</a>
+              <a href="tel:+256765000779" class="btn btn-ghost px-6 py-3 text-sm"><i class="fa-solid fa-phone"></i> 0765 000 779</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- engineering -->
+        <div class="svc-panel hidden rounded-3xl border border-slate-100 shadow-xl shadow-sun/10 overflow-hidden bg-white" data-panel="engineering">
+          <div class="grad-orange text-white p-7 lg:p-9 relative overflow-hidden">
+            <i class="fa-solid fa-gears absolute -right-6 -bottom-8 text-[9rem] text-white/10"></i>
+            <div class="flex items-center gap-4">
+              <span class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-2xl"><i class="fa-solid fa-gears"></i></span>
+              <div><h3 class="font-display font-black text-2xl lg:text-3xl">Other Engineering Solutions</h3><p class="text-amber-100 text-sm mt-1">When the job needs a real engineer.</p></div>
+            </div>
+          </div>
+          <div class="p-7 lg:p-9">
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3.5 text-[15px] text-slate-700">
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> General engineering services</li>
+              <li class="check-item flex items-start gap-3"><i class="fa-solid fa-circle-check mt-1"></i> Utility infrastructure solutions</li>
+              <li class="check-item flex items-start gap-3 sm:col-span-2"><i class="fa-solid fa-circle-check mt-1"></i> Technical consultancy</li>
+            </ul>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a href="#contact" class="btn btn-orange px-6 py-3 text-sm">Discuss a Project</a>
+              <a href="mailto:legit.utility@hotmail.com" class="btn btn-ghost px-6 py-3 text-sm"><i class="fa-solid fa-envelope"></i> Email Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS BAND ===================== -->
+<section class="grad-blue text-white relative overflow-hidden">
+  <div class="absolute inset-0 dot-grid opacity-20"></div>
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 py-14 grid grid-cols-2 lg:grid-cols-4 gap-8 relative">
+    <div class="reveal text-center">
+      <div class="font-display font-black text-4xl lg:text-5xl"><span class="counter" data-target="350">0</span>+</div>
+      <p class="mt-2 text-sky-200 font-medium text-sm uppercase tracking-wider">Projects Completed</p>
+    </div>
+    <div class="reveal dl-1 text-center">
+      <div class="font-display font-black text-4xl lg:text-5xl"><span class="counter" data-target="280">0</span>+</div>
+      <p class="mt-2 text-sky-200 font-medium text-sm uppercase tracking-wider">Happy Clients</p>
+    </div>
+    <div class="reveal dl-2 text-center">
+      <div class="font-display font-black text-4xl lg:text-5xl"><span class="counter" data-target="12">0</span>+</div>
+      <p class="mt-2 text-sky-200 font-medium text-sm uppercase tracking-wider">Districts Served</p>
+    </div>
+    <div class="reveal dl-3 text-center">
+      <div class="font-display font-black text-4xl lg:text-5xl"><span class="counter" data-target="5">0</span></div>
+      <p class="mt-2 text-sky-200 font-medium text-sm uppercase tracking-wider">Specialist Divisions</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY US ===================== -->
+<section id="why-us" class="py-20 lg:py-28 bg-brand-mist relative overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sun-amber/10 blur-2xl"></div>
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 relative">
+    <div class="reveal text-center max-w-2xl mx-auto mb-14">
+      <span class="inline-flex items-center gap-2 text-sun-deep font-display font-extrabold tracking-[.2em] text-xs uppercase mb-3"><span class="w-8 h-[3px] grad-orange rounded-full"></span> Why L.E.G.I.T <span class="w-8 h-[3px] grad-orange rounded-full"></span></span>
+      <h2 class="font-display font-black text-4xl lg:text-5xl text-brand-ink tracking-tight">The <span class="txt-orange-grad">Quality Assurance</span> Standard</h2>
+      <p class="mt-4 text-slate-600 text-lg">Our motto isn't a slogan — it's the checklist every single job is signed off against.</p>
+    </div>
+
+    <div class="grid md:grid-cols-6 gap-5">
+      <!-- big card -->
+      <div class="reveal md:col-span-3 md:row-span-2 grad-navy text-white rounded-3xl p-8 lg:p-10 relative overflow-hidden lift">
+        <i class="fa-solid fa-award absolute -right-8 -bottom-10 text-[11rem] text-white/5"></i>
+        <span class="inline-block grad-orange text-white text-xs font-display font-extrabold tracking-widest rounded-full px-3 py-1.5 mb-6">OUR PROMISE</span>
+        <h3 class="font-script italic text-3xl lg:text-4xl text-sky-300 leading-snug">"Quality Assurance"</h3>
+        <p class="mt-5 text-slate-300 leading-relaxed">Every installation is tested, commissioned and walked through with you before we leave. We use genuine materials, follow proper engineering practice, and stand behind our work with after-sales support — whether it's a single tap or a full hybrid solar plant.</p>
+        <ul class="mt-7 space-y-3 text-sm">
+          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-sun-amber"></i> Tested &amp; commissioned before handover</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-sun-amber"></i> Genuine, warrantied equipment</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-sun-amber"></i> Clear, honest quotations — no surprises</li>
+        </ul>
+      </div>
+
+      <div class="reveal dl-1 md:col-span-3 bg-white rounded-3xl p-7 border border-slate-100 shadow-lg shadow-brand-blue/5 lift flex gap-5">
+        <span class="w-14 h-14 rounded-2xl grad-blue text-white flex items-center justify-center text-xl shrink-0 wiggle"><i class="fa-solid fa-user-gear"></i></span>
+        <div><h4 class="font-display font-extrabold text-lg text-brand-ink">Skilled, Vetted Technicians</h4><p class="text-slate-600 text-sm mt-1.5 leading-relaxed">Plumbers, solar engineers, electricians and CCTV specialists — trained, equipped and supervised on every site.</p></div>
+      </div>
+
+      <div class="reveal dl-2 md:col-span-3 bg-white rounded-3xl p-7 border border-slate-100 shadow-lg shadow-sun/5 lift flex gap-5">
+        <span class="w-14 h-14 rounded-2xl grad-orange text-white flex items-center justify-center text-xl shrink-0 wiggle"><i class="fa-solid fa-truck-fast"></i></span>
+        <div><h4 class="font-display font-extrabold text-lg text-brand-ink">Fast Response Times</h4><p class="text-slate-600 text-sm mt-1.5 leading-relaxed">Based in Kakoba, Mbarara — we reach most Western Uganda sites quickly, and emergencies get priority.</p></div>
+      </div>
+
+      <div class="reveal md:col-span-2 bg-white rounded-3xl p-7 border border-slate-100 shadow-lg lift text-center">
+        <span class="w-14 h-14 mx-auto rounded-2xl grad-blue text-white flex items-center justify-center text-xl wiggle"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+        <h4 class="font-display font-extrabold text-lg text-brand-ink mt-4">Fair Pricing</h4>
+        <p class="text-slate-600 text-sm mt-2">Transparent quotes you can compare with confidence.</p>
+      </div>
+      <div class="reveal dl-1 md:col-span-2 bg-white rounded-3xl p-7 border border-slate-100 shadow-lg lift text-center">
+        <span class="w-14 h-14 mx-auto rounded-2xl grad-orange text-white flex items-center justify-center text-xl wiggle"><i class="fa-solid fa-leaf"></i></span>
+        <h4 class="font-display font-extrabold text-lg text-brand-ink mt-4">Clean Sites</h4>
+        <p class="text-slate-600 text-sm mt-2">We leave every compound as tidy as we found it.</p>
+      </div>
+      <div class="reveal dl-2 md:col-span-2 bg-white rounded-3xl p-7 border border-slate-100 shadow-lg lift text-center">
+        <span class="w-14 h-14 mx-auto rounded-2xl bg-brand-dark text-white flex items-center justify-center text-xl wiggle"><i class="fa-solid fa-headset"></i></span>
+        <h4 class="font-display font-extrabold text-lg text-brand-ink mt-4">After-Sales Care</h4>
+        <p class="text-slate-600 text-sm mt-2">Maintenance, repairs and support long after handover.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section id="process" class="py-20 lg:py-28 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="reveal max-w-2xl mb-14">
+      <span class="inline-flex items-center gap-2 text-brand-blue font-display font-extrabold tracking-[.2em] text-xs uppercase mb-3"><span class="w-8 h-[3px] grad-blue rounded-full"></span> How it works</span>
+      <h2 class="font-display font-black text-4xl lg:text-5xl text-brand-ink tracking-tight">From First Call to <span class="txt-orange-grad">Final Handover</span></h2>
+    </div>
+
+    <div class="relative grid md:grid-cols-4 gap-10 md:gap-6">
+      <div class="hidden md:block absolute top-8 left-[12%] right-[12%] h-1 process-line rounded-full"></div>
+
+      <div class="reveal relative text-center md:px-2">
+        <div class="step-num w-16 h-16 mx-auto rounded-2xl text-white font-display font-black text-2xl flex items-center justify-center rotate-3">1</div>
+        <span class="w-12 h-12 mx-auto -mt-5 relative z-10 bg-white rounded-full border-4 border-brand-mist flex items-center justify-center text-brand-blue text-lg"><i class="fa-solid fa-magnifying-glass-location"></i></span>
+        <h4 class="font-display font-extrabold text-lg mt-4 text-brand-ink">Site Visit &amp; Assessment</h4>
+        <p class="text-slate-600 text-sm mt-2 leading-relaxed">We inspect your site, listen to your needs and take accurate measurements — free within Mbarara.</p>
+      </div>
+
+      <div class="reveal dl-1 relative text-center md:px-2">
+        <div class="step-num w-16 h-16 mx-auto rounded-2xl text-white font-display font-black text-2xl flex items-center justify-center -rotate-3">2</div>
+        <span class="w-12 h-12 mx-auto -mt-5 relative z-10 bg-white rounded-full border-4 border-brand-mist flex items-center justify-center text-sun-deep text-lg"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+        <h4 class="font-display font-extrabold text-lg mt-4 text-brand-ink">Design &amp; Honest Quote</h4>
+        <p class="text-slate-600 text-sm mt-2 leading-relaxed">You get a tailored system design and a clear, itemised quotation. No hidden costs, ever.</p>
+      </div>
+
+      <div class="reveal dl-2 relative text-center md:px-2">
+        <div class="step-num w-16 h-16 mx-auto rounded-2xl text-white font-display font-black text-2xl flex items-center justify-center rotate-3">3</div>
+        <span class="w-12 h-12 mx-auto -mt-5 relative z-10 bg-white rounded-full border-4 border-brand-mist flex items-center justify-center text-brand-blue text-lg"><i class="fa-solid fa-helmet-safety"></i></span>
+        <h4 class="font-display font-extrabold text-lg mt-4 text-brand-ink">Professional Installation</h4>
+        <p class="text-slate-600 text-sm mt-2 leading-relaxed">Our technicians execute cleanly and safely, keeping you updated at every stage of the work.</p>
+      </div>
+
+      <div class="reveal dl-3 relative text-center md:px-2">
+        <div class="step-num w-16 h-16 mx-auto rounded-2xl text-white font-display font-black text-2xl flex items-center justify-center -rotate-3">4</div>
+        <span class="w-12 h-12 mx-auto -mt-5 relative z-10 bg-white rounded-full border-4 border-brand-mist flex items-center justify-center text-sun-deep text-lg"><i class="fa-solid fa-clipboard-check"></i></span>
+        <h4 class="font-display font-extrabold text-lg mt-4 text-brand-ink">Testing &amp; Handover</h4>
+        <p class="text-slate-600 text-sm mt-2 leading-relaxed">Full testing, a walkthrough of your new system, and ongoing support whenever you need us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section id="testimonials" class="grad-navy text-white py-20 lg:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 dot-grid opacity-10"></div>
+  <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-brand-blue/30 blur-3xl"></div>
+  <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-sun/20 blur-3xl"></div>
+
+  <div class="max-w-6xl mx-auto px-4 lg:px-8 relative">
+    <div class="reveal flex flex-wrap items-end justify-between gap-6 mb-12">
+      <div>
+        <span class="inline-flex items-center gap-2 text-sun-amber font-display font-extrabold tracking-[.2em] text-xs uppercase mb-3"><span class="w-8 h-[3px] grad-orange rounded-full"></span> Client stories</span>
+        <h2 class="font-display font-black text-4xl lg:text-5xl tracking-tight">Trusted Across <span class="txt-orange-grad">Western Uganda</span></h2>
+      </div>
+      <div class="flex gap-3">
+        <button id="tPrev" class="w-12 h-12 rounded-full border-2 border-white/25 hover:bg-white hover:text-brand-dark transition flex items-center justify-center" aria-label="Previous review"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="tNext" class="w-12 h-12 rounded-full grad-orange flex items-center justify-center hover:brightness-110 transition" aria-label="Next review"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <div class="overflow-hidden rounded-3xl" id="tViewport">
+      <div class="t-track flex" id="tTrack">
+        <div class="w-full shrink-0 px-1">
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10">
+            <div class="text-sun-amber text-lg mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="text-lg lg:text-xl leading-relaxed text-slate-100">"L.E.G.I.T drilled our borehole and installed the full pumping and treatment system for our hotel. Clean work, honest pricing, and the water has been crystal clear ever since."</p>
+            <div class="mt-7 flex items-center gap-4">
+              <span class="w-12 h-12 rounded-full grad-blue flex items-center justify-center font-display font-black">TR</span>
+              <div><p class="font-display font-extrabold">Tusiime R.</p><p class="text-sm text-sky-300">Hotel Owner · Mbarara</p></div>
+              <i class="fa-solid fa-quote-right ml-auto text-4xl text-white/10"></i>
+            </div>
+          </div>
+        </div>
+        <div class="w-full shrink-0 px-1">
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10">
+            <div class="text-sun-amber text-lg mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="text-lg lg:text-xl leading-relaxed text-slate-100">"They installed our 8kW hybrid solar system last year. Even during load-shedding the shop never closes and our fridge never switches off. Best investment we've made."</p>
+            <div class="mt-7 flex items-center gap-4">
+              <span class="w-12 h-12 rounded-full grad-orange flex items-center justify-center font-display font-black">AJ</span>
+              <div><p class="font-display font-extrabold">Akena J.</p><p class="text-sm text-sky-300">Supermarket Owner · Kakoba</p></div>
+              <i class="fa-solid fa-quote-right ml-auto text-4xl text-white/10"></i>
+            </div>
+          </div>
+        </div>
+        <div class="w-full shrink-0 px-1">
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10">
+            <div class="text-sun-amber text-lg mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="text-lg lg:text-xl leading-relaxed text-slate-100">"I can check my plantation from my phone any time of day. The PTZ cameras cover the whole farm and the team trained us properly on the app. Very professional."</p>
+            <div class="mt-7 flex items-center gap-4">
+              <span class="w-12 h-12 rounded-full bg-brand-dark border border-white/20 flex items-center justify-center font-display font-black">MP</span>
+              <div><p class="font-display font-extrabold">Mugisha P.</p><p class="text-sm text-sky-300">Farm Owner · Kiruhura</p></div>
+              <i class="fa-solid fa-quote-right ml-auto text-4xl text-white/10"></i>
+            </div>
+          </div>
+        </div>
+        <div class="w-full shrink-0 px-1">
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10">
+            <div class="text-sun-amber text-lg mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+            <p class="text-lg lg:text-xl leading-relaxed text-slate-100">"Full bathroom installation, new gutters and drainage at our home — they finished on schedule and left the compound spotless. We've already referred two neighbours."</p>
+            <div class="mt-7 flex items-center gap-4">
+              <span class="w-12 h-12 rounded-full grad-blue flex items-center justify-center font-display font-black">NK</span>
+              <div><p class="font-display font-extrabold">Nansubuga K.</p><p class="text-sm text-sky-300">Homeowner · Mbarara</p></div>
+              <i class="fa-solid fa-quote-right ml-auto text-4xl text-white/10"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center gap-2.5 mt-8" id="tDots"></div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-3xl mx-auto px-4 lg:px-8">
+    <div class="reveal text-center mb-12">
+      <span class="inline-flex items-center gap-2 text-brand-blue font-display font-extrabold tracking-[.2em] text-xs uppercase mb-3"><span class="w-8 h-[3px] grad-blue rounded-full"></span> Good to know <span class="w-8 h-[3px] grad-blue rounded-full"></span></span>
+      <h2 class="font-display font-black text-4xl lg:text-5xl text-brand-ink tracking-tight">Frequently Asked <span class="txt-blue-grad">Questions</span></h2>
+    </div>
+
+    <div class="space-y-4">
+      <div class="faq-item reveal border-2 border-slate-100 rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-display font-bold text-brand-ink hover:bg-slate-50 transition">
+          Do you visit the site before giving a quote?
+          <span class="faq-icon w-9 h-9 shrink-0 rounded-full border-2 border-brand-blue/25 text-brand-blue flex items-center justify-center"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-body px-6"><p class="pb-5 text-slate-600 leading-relaxed">Yes. For most projects we carry out a free site assessment within Mbarara and surrounding districts. It lets us give you an accurate, honest quotation instead of a guess.</p></div>
+      </div>
+      <div class="faq-item reveal dl-1 border-2 border-slate-100 rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-display font-bold text-brand-ink hover:bg-slate-50 transition">
+          Which areas do you cover?
+          <span class="faq-icon w-9 h-9 shrink-0 rounded-full border-2 border-brand-blue/25 text-brand-blue flex items-center justify-center"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-body px-6"><p class="pb-5 text-slate-600 leading-relaxed">We're based in Kakoba, Mbarara and work across Western Uganda — including Kiruhura, Bushenyi, Isingiro, Kabwohe and beyond. Larger projects can be handled nationwide by arrangement.</p></div>
+      </div>
+      <div class="faq-item reveal dl-2 border-2 border-slate-100 rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-display font-bold text-brand-ink hover:bg-slate-50 transition">
+          Do your solar and water systems come with a warranty?
+          <span class="faq-icon w-9 h-9 shrink-0 rounded-full border-2 border-brand-blue/25 text-brand-blue flex items-center justify-center"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-body px-6"><p class="pb-5 text-slate-600 leading-relaxed">Absolutely. All equipment carries manufacturer warranties, and our own workmanship is guaranteed. We also offer maintenance plans to keep everything running at peak performance.</p></div>
+      </div>
+      <div class="faq-item reveal dl-3 border-2 border-slate-100 rounded-2xl overflow-hidden">
+        <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-display font-bold text-brand-ink hover:bg-slate-50 transition">
+          Can you repair a system another company installed?
+          <span class="faq-icon w-9 h-9 shrink-0 rounded-full border-2 border-brand-blue/25 text-brand-blue flex items-center justify-center"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-body px-6"><p class="pb-5 text-slate-600 leading-relaxed">Yes — we regularly take over maintenance and repair of existing plumbing, solar, electrical and CCTV installations. We'll assess what you have and recommend the most cost-effective fix.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BAND ===================== -->
+<section class="grad-orange relative overflow-hidden">
+  <div class="absolute inset-0 dot-grid opacity-15"></div>
+  <i class="fa-solid fa-sun absolute right-10 -top-10 text-[12rem] text-white/10 animate-[spin_40s_linear_infinite]"></i>
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 py-14 flex flex-col lg:flex-row items-center justify-between gap-8 relative">
+    <div class="reveal text-center lg:text-left">
+      <h2 class="font-display font-black text-3xl lg:text-4xl text-white tracking-tight">Ready to start your project?</h2>
+      <p class="mt-2 text-amber-100 text-lg">Talk to a real engineer today — free assessment, honest quote, quality assured.</p>
+    </div>
+    <div class="reveal dl-1 flex flex-wrap justify-center gap-4">
+      <a href="tel:+256769548753" class="btn bg-white text-sun-deep px-7 py-3.5 shadow-xl hover:-translate-y-1 transition"><i class="fa-solid fa-phone-volume"></i> Call 0769 548 753</a>
+      <a href="https://wa.me/256769548753" target="_blank" rel="noopener" class="btn bg-brand-dark text-white px-7 py-3.5 shadow-xl hover:-translate-y-1 transition"><i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="py-20 lg:py-28 bg-brand-mist relative overflow-hidden">
+  <div class="absolute bottom-0 left-0 w-80 h-80 dot-grid opacity-50"></div>
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 relative">
+    <div class="reveal max-w-2xl mb-12">
+      <span class="inline-flex items-center gap-2 text-sun-deep font-display font-extrabold tracking-[.2em] text-xs uppercase mb-3"><span class="w-8 h-[3px] grad-orange rounded-full"></span> Get in touch</span>
+      <h2 class="font-display font-black text-4xl lg:text-5xl text-brand-ink tracking-tight">Let's Build Something <span class="txt-blue-grad">That Lasts</span></h2>
+      <p class="mt-4 text-slate-600 text-lg">Call, WhatsApp, email or send the form — we respond fast.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-8">
+      <!-- contact cards -->
+      <div class="lg:col-span-2 space-y-5">
+        <div class="reveal bg-white rounded-3xl p-6 border border-slate-100 shadow-lg lift">
+          <div class="flex items-center gap-4">
+            <span class="w-13 h-13 w-14 h-14 rounded-2xl grad-blue text-white flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-user-tie"></i></span>
+            <div><p class="text-xs font-display font-extrabold tracking-widest text-brand-blue uppercase">Managing Director</p><h4 class="font-display font-extrabold text-lg text-brand-ink">Ochen Derrick</h4></div>
+          </div>
+          <div class="mt-4 flex flex-col gap-2 text-[15px]">
+            <a href="tel:+256769548753" class="flex items-center gap-3 text-slate-700 hover:text-brand-blue transition"><i class="fa-solid fa-phone text-sun w-4"></i> 0769 548 753</a>
+            <a href="tel:+256765000779" class="flex items-center gap-3 text-slate-700 hover:text-brand-blue transition"><i class="fa-solid fa-phone text-sun w-4"></i> 0765 000 779</a>
+          </div>
+        </div>
+
+        <div class="reveal dl-1 bg-white rounded-3xl p-6 border border-slate-100 shadow-lg lift">
+          <div class="flex items-center gap-4">
+            <span class="w-14 h-14 rounded-2xl grad-orange text-white flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-headset"></i></span>
+            <div><p class="text-xs font-display font-extrabold tracking-widest text-sun-deep uppercase">Operations Manager</p><h4 class="font-display font-extrabold text-lg text-brand-ink">Operations Desk</h4></div>
+          </div>
+          <div class="mt-4 flex flex-col gap-2 text-[15px]">
+            <a href="tel:+256760529790" class="flex items-center gap-3 text-slate-700 hover:text-sun-deep transition"><i class="fa-solid fa-phone text-brand-blue w-4"></i> 0760 529 790</a>
+            <a href="tel:+256707467979" class="flex items-center gap-3 text-slate-700 hover:text-sun-deep transition"><i class="fa-solid fa-phone text-brand-blue w-4"></i> 0707 467 979</a>
+          </div>
+        </div>
+
+        <div class="reveal dl-2 grid sm:grid-cols-2 gap-5">
+          <a href="mailto:legit.utility@hotmail.com" class="bg-white rounded-3xl p-5 border border-slate-100 shadow-lg lift block">
+            <span class="w-11 h-11 rounded-xl grad-blue text-white flex items-center justify-center"><i class="fa-solid fa-envelope"></i></span>
+            <p class="font-display font-extrabold text-sm mt-3 text-brand-ink">Email Us</p>
+            <p class="text-xs text-slate-500 mt-1 break-all">legit.utility@hotmail.com</p>
+          </a>
+          <div class="bg-white rounded-3xl p-5 border border-slate-100 shadow-lg lift">
+            <span class="w-11 h-11 rounded-xl grad-orange text-white flex items-center justify-center"><i class="fa-solid fa-location-dot"></i></span>
+            <p class="font-display font-extrabold text-sm mt-3 text-brand-ink">Visit Us</p>
+            <p class="text-xs text-slate-500 mt-1">Kakoba, Mbarara, Uganda</p>
+          </div>
+        </div>
+
+        <div class="reveal dl-3 grad-navy text-white rounded-3xl p-5 flex items-center gap-4">
+          <span class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center text-sun-amber text-xl"><i class="fa-solid fa-clock"></i></span>
+          <div><p class="font-display font-extrabold text-sm">Mon – Sat · 8:00 AM – 6:00 PM</p><p class="text-xs text-sky-300 mt-0.5">Emergencies: we pick up 24/7</p></div>
+        </div>
+      </div>
+
+      <!-- form -->
+      <div class="reveal dl-1 lg:col-span-3 bg-white rounded-3xl border border-slate-100 shadow-xl shadow-brand-blue/10 p-7 lg:p-10 relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5 grad-orange"></div>
+        <h3 class="font-display font-black text-2xl text-brand-ink">Request a Free Quote</h3>
+        <p class="text-slate-500 text-sm mt-1 mb-7">Tell us what you need — we'll get back to you within one business day.</p>
+
+        <form id="quoteForm" novalidate class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-bold text-brand-ink mb-1.5" for="fName">Full Name *</label>
+            <input class="field" id="fName" type="text" placeholder="e.g. John Mugisha">
+            <p class="err-msg" data-for="fName">Please enter your name.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-brand-ink mb-1.5" for="fPhone">Phone Number *</label>
+            <input class="field" id="fPhone" type="tel" placeholder="e.g. 07XX XXX XXX">
+            <p class="err-msg" data-for="fPhone">Please enter a valid phone number.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-brand-ink mb-1.5" for="fEmail">Email (optional)</label>
+            <input class="field" id="fEmail" type="email" placeholder="you@example.com">
+            <p class="err-msg" data-for="fEmail">That email doesn't look right.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-brand-ink mb-1.5" for="fService">Service Needed *</label>
+            <select class="field" id="fService">
+              <option value="">— Choose a service —</option>
+              <option>Water & Plumbing</option>
+              <option>Solar & Energy</option>
+              <option>Security Systems (CCTV)</option>
+              <option>Electrical Services</option>
+              <option>Engineering / Consultancy</option>
+              <option>Other</option>
+            </select>
+            <p class="err-msg" data-for="fService">Please select a service.</p>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block text-sm font-bold text-brand-ink mb-1.5" for="fMsg">Project Details *</label>
+            <textarea class="field" id="fMsg" rows="4" placeholder="Briefly describe your project, location and timeline..."></textarea>
+            <p class="err-msg" data-for="fMsg">Please tell us a little about your project.</p>
+          </div>
+          <div class="sm:col-span-2 flex flex-wrap items-center gap-4">
+            <button type="submit" class="btn btn-orange px-8 py-3.5 text-base" id="submitBtn"><i class="fa-solid fa-paper-plane"></i> Send Request</button>
+            <p class="text-xs text-slate-400 flex items-center gap-2"><i class="fa-solid fa-lock"></i> Your details stay private.</p>
+          </div>
+        </form>
+
+        <div id="formSuccess" class="hidden text-center py-14">
+          <span class="w-20 h-20 mx-auto rounded-full grad-blue text-white text-3xl flex items-center justify-center animate-bounce"><i class="fa-solid fa-check"></i></span>
+          <h4 class="font-display font-black text-2xl text-brand-ink mt-6">Request received!</h4>
+          <p class="text-slate-600 mt-2 max-w-sm mx-auto">Thank you — our team will call you back shortly. For urgent jobs, ring <a href="tel:+256769548753" class="font-bold text-brand-blue">0769 548 753</a>.</p>
+          <button id="resetForm" class="btn btn-ghost px-6 py-3 mt-7 text-sm">Send another request</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="grad-navy text-slate-300">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="w-11 h-11 rounded-xl grad-orange text-white flex items-center justify-center text-lg"><i class="fa-solid fa-bolt"></i></span>
+        <span class="leading-none">
+          <span class="font-display font-black text-xl"><span class="text-sky-400">L.E.G.I.T</span> <span class="text-sun-amber">UTILITY</span></span>
+          <span class="block font-display font-bold text-[10px] tracking-[.22em] text-sun-amber mt-1">&amp; ENERGY SERVICES</span>
+        </span>
+      </div>
+      <p class="font-script italic text-sky-300 text-lg mt-5">Quality Assurance</p>
+      <p class="text-sm text-slate-400 mt-3 leading-relaxed">Engineering and utility solutions in water, energy, security and technical services — for homes, businesses, institutions and farms.</p>
+      <div class="flex gap-3 mt-6">
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:grad-orange hover:text-white transition flex items-center justify-center" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/256769548753" class="w-10 h-10 rounded-full bg-white/10 hover:bg-green-500 hover:text-white transition flex items-center justify-center" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white hover:text-brand-dark transition flex items-center justify-center" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div>
+      <h5 class="font-display font-extrabold text-white text-lg mb-5">Quick Links</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a href="#home" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-sun-amber"></i> Home</a></li>
+        <li><a href="#services" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-sun-amber"></i> Services</a></li>
+        <li><a href="#why-us" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-sun-amber"></i> Why Us</a></li>
+        <li><a href="#process" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-sun-amber"></i> Our Process</a></li>
+        <li><a href="#testimonials" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-sun-amber"></i> Reviews</a></li>
+        <li><a href="#contact" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs text-sun-amber"></i> Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h5 class="font-display font-extrabold text-white text-lg mb-5">Our Services</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a href="#services" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-droplet text-xs text-sky-400"></i> Water &amp; Plumbing</a></li>
+        <li><a href="#services" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-solar-panel text-xs text-sun-amber"></i> Solar &amp; Energy</a></li>
+        <li><a href="#services" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-video text-xs text-sky-400"></i> Security Systems</a></li>
+        <li><a href="#services" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-bolt text-xs text-sun-amber"></i> Electrical Works</a></li>
+        <li><a href="#services" class="hover:text-sun-amber transition flex items-center gap-2"><i class="fa-solid fa-gears text-xs text-sky-400"></i> Engineering Solutions</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h5 class="font-display font-extrabold text-white text-lg mb-5">Contact</h5>
+      <ul class="space-y-4 text-sm">
+        <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot text-sun-amber mt-1"></i> Kakoba, Mbarara, Uganda</li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-phone text-sun-amber mt-1"></i> <span><a href="tel:+256769548753" class="hover:text-white transition">0769 548 753</a> · <a href="tel:+256765000779" class="hover:text-white transition">0765 000 779</a><br><a href="tel:+256760529790" class="hover:text-white transition">0760 529 790</a> · <a href="tel:+256707467979" class="hover:text-white transition">0707 467 979</a></span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-envelope text-sun-amber mt-1"></i> <a href="mailto:legit.utility@hotmail.com" class="hover:text-white transition break-all">legit.utility@hotmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+      <p>© <span id="year"></span> L.E.G.I.T Utility &amp; Energy Services. All rights reserved.</p>
+      <p class="flex items-center gap-2">Built with <i class="fa-solid fa-heart text-sun-amber"></i> in Mbarara · <span class="font-script italic text-sky-300 text-sm">Quality Assurance</span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- floating WhatsApp -->
+<a href="https://wa.me/256769548753" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-green-500 text-white text-2xl flex items-center justify-center shadow-2xl shadow-green-500/40 hover:scale-110 transition">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30"></span>
+</a>
+
+<!-- back to top -->
+<button id="toTop" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full grad-blue text-white shadow-xl flex items-center justify-center hover:-translate-y-1 transition" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- toast -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 grad-navy text-white rounded-2xl px-6 py-4 shadow-2xl flex items-center gap-3 max-w-sm">
+  <i class="fa-solid fa-circle-check text-sun-amber text-xl"></i>
+  <p class="text-sm font-semibold" id="toastMsg">Message sent successfully!</p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* year */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* header shadow */
+  const header = document.getElementById('header');
+  const onScrollHeader = () => header.classList.toggle('shadow-lg', window.scrollY > 10);
+  window.addEventListener('scroll', onScrollHeader, {passive:true}); onScrollHeader();
+
+  /* mobile menu */
+  const menuBtn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  menuBtn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+    menuIcon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open'); menuIcon.className = 'fa-solid fa-bars'; menuBtn.setAttribute('aria-expanded','false');
+  }));
+
+  /* active nav on scroll */
+  const sections = [...document.querySelectorAll('section[id]')];
+  const navLinks = [...document.querySelectorAll('.nav-link')];
+  const setActive = () => {
+    let cur = 'home';
+    const y = window.scrollY + 140;
+    sections.forEach(s => { if (s.offsetTop <= y) cur = s.id; });
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
+  };
+  window.addEventListener('scroll', setActive, {passive:true}); setActive();
+
+  /* reveal on scroll */
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); revObs.unobserve(e.target);} });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+  /* counters */
+  const counters = document.querySelectorAll('.counter');
+  const cObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.target;
+      const start = performance.now(), dur = 1600;
+      const tick = now => {
+        const p = Math.min((now - start)/dur, 1);
+        el.textContent = Math.floor((1 - Math.pow(1-p,3)) * target);
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      cObs.unobserve(el);
+    });
+  }, {threshold:.5});
+  counters.forEach(c => cObs.observe(c));
+
+  /* service tabs */
+  const tabs = document.querySelectorAll('.svc-tab');
+  const panels = document.querySelectorAll('.svc-panel');
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+    const key = tab.dataset.tab;
+    panels.forEach(p => {
+      const show = p.dataset.panel === key;
+      p.classList.toggle('hidden', !show);
+      if (show){ p.classList.remove('in'); void p.offsetWidth; p.classList.add('in'); }
+    });
+  }));
+
+  /* testimonial slider */
+  const track = document.getElementById('tTrack');
+  const slides = track.children.length;
+  const dotsBox = document.getElementById('tDots');
+  let idx = 0, timer;
+  for (let i=0;i<slides;i++){
+    const d = document.createElement('button');
+    d.className = 't-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','Go to review ' + (i+1));
+    d.addEventListener('click', () => { go(i); restart(); });
+    dotsBox.appendChild(d);
+  }
+  const dots = [...dotsBox.children];
+  function go(i){
+    idx = (i + slides) % slides;
+    track.style.transform = `translateX(-${idx*100}%)`;
+    dots.forEach((d,n) => d.classList.toggle('active', n===idx));
+  }
+  function restart(){ clearInterval(timer); timer = setInterval(() => go(idx+1), 6000); }
+  document.getElementById('tNext').addEventListener('click', () => { go(idx+1); restart(); });
+  document.getElementById('tPrev').addEventListener('click', () => { go(idx-1); restart(); });
+  const vp = document.getElementById('tViewport');
+  vp.addEventListener('mouseenter', () => clearInterval(timer));
+  vp.addEventListener('mouseleave', restart);
+  /* touch swipe */
+  let sx = null;
+  vp.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive:true});
+  vp.addEventListener('touchend', e => {
+    if (sx === null) return;
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 45) { go(dx < 0 ? idx+1 : idx-1); restart(); }
+    sx = null;
+  }, {passive:true});
+  restart();
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => o.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  /* form validation */
+  const form = document.getElementById('quoteForm');
+  const success = document.getElementById('formSuccess');
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  const setErr = (id, bad) => {
+    document.getElementById(id).classList.toggle('err', bad);
+    document.querySelector(`.err-msg[data-for="${id}"]`).classList.toggle('show', bad);
+  };
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('fName').value.trim();
+    const phone = document.getElementById('fPhone').value.trim();
+    const email = document.getElementById('fEmail').value.trim();
+    const svc = document.getElementById('fService').value;
+    const msg = document.getElementById('fMsg').value.trim();
+    let ok = true;
+    if (name.length < 2){ setErr('fName', true); ok = false; } else setErr('fName', false);
+    if (!/^[0-9+\s-]{9,15}$/.test(phone)){ setErr('fPhone', true); ok = false; } else setErr('fPhone', false);
+    if (email && !/^\S+@\S+\.\S+$/.test(email)){ setErr('fEmail', true); ok = false; } else setErr('fEmail', false);
+    if (!svc){ setErr('fService', true); ok = false; } else setErr('fService', false);
+    if (msg.length < 10){ setErr('fMsg', true); ok = false; } else setErr('fMsg', false);
+
+    if (!ok){
+      toastMsg.textContent = 'Please fix the highlighted fields.';
+      toast.querySelector('i').className = 'fa-solid fa-circle-exclamation text-red-400 text-xl';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3200);
+      return;
+    }
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    setTimeout(() => {
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+      toastMsg.textContent = 'Request sent successfully!';
+      toast.querySelector('i').className = 'fa-solid fa-circle-check text-sun-amber text-xl';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3200);
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Request';
+    }, 1100);
+  });
+  ['fName','fPhone','fEmail','fService','fMsg'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => setErr(id, false));
+  });
+  document.getElementById('resetForm').addEventListener('click', () => {
+    form.reset();
+    success.classList.add('hidden');
+    form.classList.remove('hidden');
+  });
+
+  /* back to top */
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 600), {passive:true});
+  toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+});
+</script>
+</body>
+</html>
